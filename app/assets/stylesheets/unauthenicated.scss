@@ -1,0 +1,52 @@
+.user-login-unauthenticated-wrapper {
+	background: $blue700;
+	width: 100%;
+	height: 100%;
+}
+.user-login-form {
+	width: 300px;
+	height: 420px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 20px;
+	background: $gray100;
+	border-radius: 0px 20px;
+	.login-form {
+		padding: 20px 0;
+		.btn-action-orange {
+			outline: 0;
+			display: block;
+			width: 100%;
+			border: 0;
+			border-radius: 5px;
+			padding: 10px 0;
+			margin: 20px 0;
+			font-size: 20px;
+			font-weight: 900;
+			cursor: pointer;
+			background: $amber400;
+			color: $gray900;
+			&:hover {background: $amber700}
+		}
+		.fieldgrp input {
+			width: 100%;
+			border: 0;
+			padding: 10px 5px;
+			margin: 5px 0;
+			outline: 0;
+			font-size: 16px;
+			font-weight: 100;
+			&[type=submit] {
+				font-weight: 900;
+				text-transform: uppercase;
+			}
+		}
+		#tallii-login-form, #tallii-register-form {
+			display: none;
+		}
+	}
+}

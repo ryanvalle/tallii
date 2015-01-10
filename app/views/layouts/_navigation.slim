@@ -1,0 +1,9 @@
+header
+	= image_tag 'logos/tallii_logo_mono100.svg', id: 'tallii-logo-unauthenticated', class: 'tallii-logo blue700 small-logo'
+- if params[:action] != 'index' && params[:controller] != 'tallii'
+	nav
+		ul
+			li =link_to 'My Profile', profile_path, class: "orange #{is_selected('profile')}"
+			li =link_to 'Games', game_path, class: "amber #{is_selected('game')}"
+			li =link_to 'Top Scores', score_path, class: "red #{is_selected('score')}"
+			li =link_to 'Find Players', player_path, class: "lightorange #{is_selected('player')}"

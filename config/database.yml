@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  database: blogfolio_db
+  username: root
+  password:
+  host: localhost
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: tallii_dev_db
+
+test:
+  <<: *default
+  database: tallii_test_db
+  
+production:
+  <<: *default
+  database: tallii_db

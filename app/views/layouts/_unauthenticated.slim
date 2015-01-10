@@ -1,0 +1,27 @@
+.user-login-unauthenticated-wrapper
+	.user-login-form
+		= image_tag 'logos/tallii_logo_blue700.svg', id: 'tallii-logo-unauthenticated', class: 'tallii-logo relative-logo'
+		.login-form
+			button.btn-action-orange.auth-btn#login-form-btn LOGIN
+			button.btn-action-orange.auth-btn#register-form-btn REGISTER
+			#tallii-login-form
+				= form_for(:user, url: login_path) do |f|
+					.fieldgrp
+						= f.text_field :username, class:"auth_form", placeholder: 'USERNAME'
+					.fieldgrp 
+						= f.password_field :password ,class:"auth_form", placeholder: 'PASSWORD'
+					.fieldgrp
+						= f.submit "Login", class: "btn-action-orange"
+			#tallii-register-form
+				= form_for(:user, url: register_path) do |f|
+					.fieldgrp
+						= f.text_field :username, class:"auth_form", placeholder: 'USERNAME'
+					.fieldgrp 
+						= f.password_field :password ,class:"auth_form", placeholder: 'PASSWORD'
+					.fieldgrp 
+						= f.password_field :password_digest ,class:"auth_form", placeholder: 'PASSWORD'
+					.fieldgrp 
+						= f.text_field :displayname ,class:"auth_form", placeholder: 'DISPLAY NAME (optional)'
+
+					.fieldgrp
+						= f.submit "Login", class: "btn-action-orange"
