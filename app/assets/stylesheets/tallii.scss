@@ -8,16 +8,25 @@
 			padding: 20px 0;
 			text-align: center;
 			margin: 5px 5px;
-			font-size: 24px;
-			font-weight: 900;
 			text-transform: uppercase;
-			color: $mono100;
 			text-shadow: 1px 1px 0 $mono900;
 			&.orange { background: $orange400; border-bottom: 2px solid $orange400;}
 			&.red { background: $amber700; border-bottom: 2px solid $amber700;}
 			&.amber { background: $orange100; border-bottom: 2px solid $orange100;}
 			&.lightorange { background: $amber400; border-bottom: 2px solid $amber400;}
-			&:hover { color: $blue400; border-bottom: 2px solid $blue400; }
+			&:hover { 
+				p { color: $blue400; }
+				border-bottom: 2px solid $blue400;
+			}
+			p { 
+				color: $mono100;
+				font-size: 24px;
+				font-weight: 900;
+			}
+			img {
+				height: 150px;
+				padding: 20px 0;
+			}
 		}
 	}
 }

@@ -1,0 +1,6 @@
+.game-list-wrapper
+	ul
+		- @games.each do |game|
+			li =link_to game.game, game_show_path(id: game.id)
+		- if signed_in?
+			li.add-game = link_to "+ Add Game", game_new_path

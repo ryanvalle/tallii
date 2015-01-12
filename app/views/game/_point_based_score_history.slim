@@ -1,0 +1,14 @@
+table
+	thead
+		tr 
+			td Date
+			td Winner
+			td Loser
+			td Final Score
+	tbody
+		- @scores.each do |score|
+			tr
+				td.date =score.created_at.strftime('%m-%d-%Y')
+				td = get_player(score.winning_user)
+				td = get_player(score.winning_user == score.player ? score.user_id : score.player)
+				td.score #{score.user_score} -- #{score.player_score}

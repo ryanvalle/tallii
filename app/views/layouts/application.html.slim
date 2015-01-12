@@ -8,10 +8,5 @@ html
 	  = csrf_meta_tags
 	body
 		#body-container
-			- if signed_in?
-				= render 'layouts/navigation'
-				= yield
-			- else
-				= render 'layouts/unauthenticated'
-
-			= link_to 'so', logout_path
+			= render 'layouts/navigation' unless params[:action] == 'authenticate'
+			= yield

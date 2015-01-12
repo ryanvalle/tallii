@@ -1,0 +1,124 @@
+section {
+	width: 100%;
+	height: -webkit-calc(100% - 168px);
+	height: calc(100% - 168px);
+	padding: 10px;
+	.game-list-wrapper {
+		display: inline-block;
+		width: 200px;
+		height: 100%;
+		padding: 5px;
+		ul {
+			list-style: none;
+			li {
+				background: $amber700;
+				&:hover { background: $amber400; }
+				&:nth-child(odd) {
+					background: $blue400;
+					&:hover { background: $blue700; }
+				}
+				&.add-game {
+					background: $red400;
+					&:hover { background: $red700 }
+				}
+				a {
+					padding: 10px 5px;
+					width: 100%;
+					height: 100%;
+					display: block;
+					color: $mono100;
+					text-shadow: 1px 1px 0 $mono900;
+				}
+			}
+		}
+	}
+	.create-form, .show-game {
+		padding: 5px;
+		display: inline-block;
+		width: -webkit-calc(100% - 200px);
+		width: calc(100% - 200px);
+		vertical-align: top;
+		.game-types {
+			margin: 10px 0 0 0;
+			ul {
+				margin: 0 0 0 1em;
+				li { margin: 3px 0; }
+			}
+		}
+	}
+	.show-game {
+		h1 { border-bottom: 1px solid $gray400; width: 100%; }
+		.add-score, .leaderboards {
+			border-bottom: 1px solid $gray100;
+			.fieldgrp { margin: 5px 0; }
+		}
+		.leaderboards, .add_score, .score-log {
+			margin: 5px 0;
+			padding: 5px;
+		}
+		.leaderboards, .score-log {
+			table {
+				td { 
+					&.user, &.username {
+						width: 75px;
+						border-right: 1px solid $blue700;
+					}
+				}
+			}
+		}
+		.score-log {
+			table {
+				td {
+					padding: 8px 12px;
+					text-align: center;
+					&.date {
+						width: 125px;
+					}
+					&.score {
+						width: 125px;
+					}
+				}
+			}
+		}
+	}
+	.tallies {
+		img { height: 24px;}
+		&.large img{height: 55px;}
+		.total-wins {
+			display: inline;
+			font-size: 14px;
+			color: $mono700;
+		}
+	}
+	&.player-summary {
+		table {
+			thead tr td { text-align: center }
+			tbody {
+				tr {
+					td {
+						&.username { text-align: center; }
+						&.game {
+							border-left: 1px solid $blue700;
+							width: 25%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.profile {
+		.game-container {
+			margin: 20px 0;
+			border: 1px solid $blue400;
+			border-radius: 10px 0;
+			overflow: hidden;
+			h2 {
+				background-color: $blue400;
+				padding: 10px 5px;
+			}
+			.tallies {
+				padding: 4px 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+section.player-summary
+	h1 Players
+	p Welcome to the players page, where you can get a summary of how everyone is doing so far in all games :)
+
+	table
+		thead
+			tr
+				td Users
+				- @games.each do |game|
+					td =game.game
+		tbody
+			- @users.each do |user|
+				tr
+					td.username =user.username
+					- @games.each do |game|
+						td.game =tally_wins(number_of_wins(user, game.id))

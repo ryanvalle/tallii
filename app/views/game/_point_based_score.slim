@@ -1,0 +1,12 @@
+= form_for(:score, url: score_new_path) do |f|
+	= f.hidden_field :game_id, value: params[:id]
+	= f.hidden_field :user_id, value: current_user.id
+	.fieldgrp
+		= f.label 'I played against:'
+		= f.collection_select :player, @users_without_current, :id, :username
+	.fieldgrp
+		= f.text_field :user_score, placeholder: 'My Score'
+	.fieldgrp
+		= f.text_field :player_score, placeholder: 'Opponent Score'
+	.fieldgrp
+		= f.submit 'tallii it!'

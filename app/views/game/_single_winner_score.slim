@@ -1,0 +1,10 @@
+= form_for(:score, url: score_new_path) do |f|
+	= f.hidden_field :game_id, value: params[:id]
+	.fieldgrp
+		div Winner:
+		= f.collection_select :player, @users_with_shift, :id, :username
+	.fieldgrp
+		div Played Against:
+		= f.collection_select :player_group, @users, :id, :username, {}, {multiple: 'multiple'}
+	.fieldgrp
+		= f.submit 'tallii it!'

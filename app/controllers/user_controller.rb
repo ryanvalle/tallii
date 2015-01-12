@@ -1,7 +1,6 @@
 class UserController < ApplicationController
 	def create
 		user = User.new
-		debugger
 		user.username = params[:user][:username]
 		user.password = params[:user][:password]
 		user.password_confirmation = params[:user][:password_digest]
@@ -13,6 +12,12 @@ class UserController < ApplicationController
 		else
 			redirect_to root_path
 		end
+	end
+
+	def show
+		redirect_to root_path if params[:id].blank?
+		@user = User.find(params[:id])
+		@games = Game.all
 	end
 
 	def update

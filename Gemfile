@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'slim'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'select2-rails', '~> 3.5.9.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt'

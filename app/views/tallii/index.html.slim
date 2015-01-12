@@ -1,10 +1,14 @@
 .index-navigation
 	.nav-boxes
-		= link_to profile_path, class: 'nav-box profile orange' do
-			| My Profile
-		= link_to game_path, class: 'nav-box profile amber' do
-			| Games
-		= link_to score_path, class: 'nav-box profile red' do
-			| Top Scores
-		= link_to player_path, class: 'nav-box profile lightorange' do
-			| Find Players
+		= link_to profile_path(current_user.id), class: 'nav-box profile red' do
+			= image_tag 'icons/0069-address-book.svg'
+			p My Profile
+		= link_to game_path, class: 'nav-box profile lightorange' do
+			= image_tag 'icons/0023-pacman.svg'
+			p Games
+		= link_to player_path, class: 'nav-box profile red' do
+			= image_tag 'icons/0115-users.svg'
+			p Players
+		= link_to logout_path, class: 'nav-box profile lightorange' do
+			= image_tag 'icons/0277-exit.svg'
+			p Log Out

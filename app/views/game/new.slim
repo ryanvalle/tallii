@@ -1,0 +1,18 @@
+section
+	= render 'game_navigation'
+	.create-form
+		h2 Add a Game
+		= form_for(:game, url: game_create_path) do |f|
+			.fieldgrp
+				= f.text_field :game, placeholder: 'Game Title'
+			.fieldgrp
+				= f.select :game_type, [['Select a Game Type',''],['Point Based','1'],['Single Winner','2']]
+			.fieldgrp
+				= f.submit 'Submit'
+		.game-types
+			h3 Game Title
+			p Game titles must be unique
+			h3 Game Types
+			ul 
+				li Point Based - Ideal for tracking winners by player scores. Works best for 2 player games
+				li Single Winner - Definitive winner logging. No scores are kept other than total count of wins

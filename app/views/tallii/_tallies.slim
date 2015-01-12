@@ -1,0 +1,12 @@
+.tallies
+	- if wins > 0 
+		- tally_five.times do |t|
+			= image_tag 'tally/tally_5.svg'
+		- if tally_single > 0
+			= image_tag "tally/tally_#{tally_single}.svg"
+		.total-wins
+			= "(#{wins})"
+	- else 
+		= image_tag 'icons/0248-neutral.svg'
+		.total-wins 
+			| (0)

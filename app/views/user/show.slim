@@ -1,0 +1,7 @@
+section.profile
+	h1 =@user.username
+	- @games.each do |game|
+		.game-container
+			h2 =game.game
+			.tallies.large
+				=tally_wins(number_of_wins(@user, game.id))

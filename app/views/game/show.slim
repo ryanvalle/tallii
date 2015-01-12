@@ -1,0 +1,33 @@
+section
+	= render 'game_navigation'
+	.show-game
+		h1 Game Title: #{@game.game}
+		-if signed_in?
+			.add-score
+				h2 Add a Score
+				- if @game.game_type == 1
+					= render 'point_based_score'
+				- else
+					= render 'single_winner_score'
+
+		.leaderboards
+			h2 Winner Tally
+			.scores
+				table
+					thead
+						tr 
+							td.user User
+							td.wins Wins
+					tbody
+						- @users.each do |user|
+							tr
+								td.username = user.username
+								td =tally_wins(number_of_wins(user, params[:id]))
+
+		.score-log
+			h2 Score History
+			.scores
+			- if @game.game_type == 1
+				= render 'point_based_score_history'
+			- else
+				= render 'single_winner_score_history'
