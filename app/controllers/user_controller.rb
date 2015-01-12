@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+	before_filter :set_selected
 	def create
 		user = User.new
 		user.username = params[:user][:username]
@@ -40,6 +41,9 @@ class UserController < ApplicationController
 		sign_out
 		redirect_to root_path
 	end
+	
 	private
-
+		def set_selected
+			params[:nav_action] = 'profile'
+		end
 end

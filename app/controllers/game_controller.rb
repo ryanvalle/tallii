@@ -46,6 +46,7 @@ class GameController < ApplicationController
 		def set_selected
 			params[:nav_action] = 'game'
 		end
+		
 		def get_games
 			@games = Game.all
 		end
